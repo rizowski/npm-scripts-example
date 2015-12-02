@@ -1,2 +1,5 @@
 # npm-scripts-example
-http://slides.com/rizowski/npm-scripts
+
+To run these examples you will need:
+  - Node 4.x
+  - babel-cli globally

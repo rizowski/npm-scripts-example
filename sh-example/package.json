@@ -1,0 +1,18 @@
+{
+  "name": "sh-example",
+  "scripts": {
+    "prewatch": "npm install",
+    "watch": "node watch.js",
+    "test": "mocha tests --compilers js:babel-core/register",
+    "build": "babel src --out-dir src-compiled --source-maps"
+  },
+  "devDependencies": {
+    "babel": "^6.1.18",
+    "babel-cli": "^6.2.0",
+    "babel-core": "^6.2.1",
+    "babel-runtime": "^6.2.0",
+    "chai": "^3.4.1",
+    "chokidar": "^1.3.0",
+    "mocha": "^2.3.4"
+  }
+}
