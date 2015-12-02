@@ -1,0 +1,15 @@
+{
+  "name": "start-command",
+  "config": {
+    "port": 3000,
+    "url": "http://rizowski-mac.local"
+  },
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "good": "^6.4.0",
+    "good-console": "^5.2.0",
+    "hapi": "^11.1.2"
+  }
+}
