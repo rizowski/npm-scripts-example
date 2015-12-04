@@ -1,6 +1,7 @@
 'use strict';
 let Hapi = require('hapi');
 let Good = require('good');
+let child = require('child_process');
 
 let server = new Hapi.Server();
 server.connection({ port: process.env.npm_package_config_port });
@@ -28,16 +29,18 @@ server.register({
       reporter: require('good-console'),
       events: {
         response: '*',
+        ops: '*',
         log: '*'
       }
     }]
   }
-}, (err) => {
+}, err => {
   if (err) {
-    throw err; // something bad happened loading the plugin
+    throw err;
   }
 
   server.start(() => {
-    server.log('info', 'Server running at: ' + server.info.uri);
+    server.log('info', `Server running at: ${server.info.uri}`);
+    child.exec(`open ${server.info.uri}`)
   });
 });
