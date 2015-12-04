@@ -16,9 +16,9 @@
     "lint": "esw --quiet",
     "lint:watch": "esw -w --quiet",
     "pretest": "npm run lint",
-    "test": "mocha tests",
+    "test": "mocha tests --compilers js:babel/register",
     "precoverage": "npm run lint",
-    "coverage": "istanbul cover node_modules/mocha/bin/_mocha -- -R ${MOCHA_REPORTER:-spec} --recursive tests",
+    "coverage": "istanbul cover node_modules/mocha/bin/_mocha -- -R ${MOCHA_REPORTER:-spec} --recursive tests --compilers js:babel/register",
     "postcoverage": "istanbul check-coverage",
     "ci": "npm run coverage"
   },
