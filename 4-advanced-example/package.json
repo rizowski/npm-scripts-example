@@ -16,11 +16,11 @@
     "lint": "esw --quiet",
     "lint:watch": "esw -w --quiet",
     "pretest": "npm run lint",
-    "test": "mocha tests --compilers js:babel/register",
-    "precoverage": "npm run lint",
-    "coverage": "istanbul cover node_modules/mocha/bin/_mocha -- -R ${MOCHA_REPORTER:-spec} --recursive tests --compilers js:babel/register",
+    "test": "node_modules/.bin/_mocha tests --compilers js:babel/register",
+    "coverage": "istanbul cover npm test",
     "postcoverage": "istanbul check-coverage",
-    "ci": "npm run coverage"
+    "ci": "npm run coverage",
+    "preversion": "node scripts/checkBranch.js master"
   },
   "dependencies": {
     "chalk": "1.1.1",
