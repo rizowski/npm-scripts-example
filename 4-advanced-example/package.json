@@ -1,0 +1,46 @@
+{
+  "name": "sprinkles",
+  "author": "Colten Rouska",
+  "version": "0.0.1",
+  "description": "Creates colorful text",
+  "main": "src/cli.js",
+  "bin": {
+    "sprinkle": "./bin/sprinkle"
+  },
+  "scripts": {
+    "build": "babel -w -d src-compiled src",
+    "prebuild:watch": "npm install",
+    "build:watch": "npm run build -- -w",
+    "presetup": "npm run build",
+    "setup": "npm link",
+    "lint": "esw --quiet",
+    "lint:watch": "esw -w --quiet",
+    "pretest": "npm run lint",
+    "test": "mocha tests",
+    "precoverage": "npm run lint",
+    "coverage": "istanbul cover node_modules/mocha/bin/_mocha -- -R ${MOCHA_REPORTER:-spec} --recursive tests",
+    "postcoverage": "istanbul check-coverage",
+    "ci": "npm run coverage"
+  },
+  "dependencies": {
+    "chalk": "1.1.1",
+    "lodash": "3.10.1",
+    "optionator": "0.6.0"
+  },
+  "devDependencies": {
+    "babel": "5.8.34",
+    "babel-runtime": "5.8.34",
+    "chai": "3.4.1",
+    "chokidar": "^1.4.0",
+    "debug": "2.2.0",
+    "eslint": "1.10.3",
+    "eslint-watch": "2.1.4",
+    "istanbul": "0.4.1",
+    "mocha": "2.3.4"
+  },
+  "keywords": [
+    "colors",
+    "cake"
+  ],
+  "license": "MIT"
+}
